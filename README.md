@@ -9,7 +9,7 @@ The purpose of this program is to implement the infix to postfix conversion algo
   Postfix conversion: 234*+
   $ java Converter
   Please input your infix expression:  (1+2)*7
-  Postfix conversion: 12+7
+  Postfix conversion: 12+7*
 ```
 You should read your infix expression using the ```Scanner``` class (```nextLine``` method).
 
