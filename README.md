@@ -4,14 +4,14 @@ The purpose of this program is to implement the infix to postfix conversion
 algorithm we presented in class:
 * Create an empty stack called **opstack** for keeping operators.
 * Read the infix expression character by character.
-* For each character ...
+* For each character do the following:
   * if an operand (a..zA..Z0..9), write out (print to System.out).
   * if a left parenthesis, push it on the **opstack**.
   * if a right parenthesis, pop the **opstack** and write out until the
 corresponding left parenthesis is removed.
-  * if an operator (*, /, +, or -) push it on the **opstack**. However, first
-remove any operators already on the opstack that have higher or equal
-precedence and write them out.
+  * if an operator (*, /, +, or -) push it on the **opstack**.
+However, **first** remove any **operators** already on the opstack that have
+higher or equal precedence and write them out.
 * When all characters in the input expression have been read, check the
 **opstack**. Any operators still on the stack can be popped and written out.
 
