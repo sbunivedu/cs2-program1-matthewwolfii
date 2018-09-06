@@ -52,15 +52,19 @@ public class Program1
       }
       else if (infix.charAt(i) == ')')
       {
-        while (opstack.peek() != '(')
-          finish += opstack.pop();
-        opstack.pop();
-
-
+        while (!opstack.isEmpty() && opstack.peek() != '(')
+        {
+        finish += opstack.pop();
+        }
+      opstack.pop();
       }
       else if (isOperator(infix.charAt(i)))
       {
-        opstack.push(infix.charAt(i));
+      while (!opstack.isEmpty() && opstack.peek() != '(' && precedenceOrder(opstack.peek()) >= precedenceOrder(infix.charAt(i)))
+      {
+      finish += opstack.pop();
+      }
+      opstack.push(infix.charAt(i));
       }
 
     }//for
@@ -76,6 +80,6 @@ public class Program1
       }
 
     }
-    System.out.println("Conversion: " + finish);
+    System.out.println("Postfix conversion: " + finish);
   }//void main
 }//class
